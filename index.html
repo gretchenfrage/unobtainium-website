@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html>
+	<style>
+	    @font-face {
+	    	font-family: consolas;
+	    	src: url('consolas.ttf');
+	    }
+		body {
+			background-color: black;
+			background-position: center;
+			background-attachment: fixed;
+			font-family: consolas, "Lucida Sans Typewriter";
+			background-image: url("background.jpg");
+		}
+		#header {
+			width: 1100px;
+			margin: auto;
+			margin-top: 50px;
+		}
+		#headerLeft {
+			width: 710px;
+			float: left;
+		}
+		#title {
+			margin-top: 30px;
+			margin-bottom: 30px;
+			color: white;
+			font-size: 30pt;
+			background-color: rgba(127, 140, 141, 0.9);
+			padding-left: 40px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			border-radius: 3px;
+			width: 100%;
+			line-height: 50px;
+
+			-webkit-transform:scale(1,1.15); /* Safari and Chrome */
+			-moz-transform:scale(1,1.15); /* Firefox */
+			-ms-transform:scale(1,1.15); /* IE 9 */
+			-o-transform:scale(1,1.15); /* Opera */
+			transform:scale(1,1.15); /* W3C */
+		}
+		a.socialLink {
+			padding: 10px 19px;
+			font-size: 22px;
+			border-radius: 6px;
+			background-color: rgba(127, 140, 141, 0.9);
+			width: 16%;
+			text-decoration: none;
+			display: block;
+			margin-left: 84%;
+			color: white;
+		}
+		#menu {
+			width: 350px;
+			float: right;
+			position: fixed;
+		}
+		span.menuButton {
+		    padding: 10px 19px;
+		    font-size: 22px;
+		    border-radius: 6px;
+		    color: #ffffff;
+		    background-color: #1abc9c;
+		    display: block;
+			text-decoration: none;
+    		width: 65%;
+    		margin: auto;
+    		margin-bottom: 20px;
+    		text-align: right;
+    		cursor: pointer;
+		    -webkit-user-select: none;  
+			-moz-user-select: none;    
+			-ms-user-select: none;      
+			user-select: none;
+		}
+		div.section {
+			background-color: #BDC3C7;
+			width: 950px;
+			margin: auto;
+			border-radius: 3px;
+		}
+		#clear {
+			clear: both;
+		}
+		div.sectionHeader {
+			font-size: 24px;
+			font-family: consolas, "Lucida Sans Typewriter";
+			text-align: center;
+			background-color: #7F8C8D;
+			color: white;
+			margin: auto;
+			width: 500px;
+			border-radius: 3px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+		div.sectionContent {
+			width: 800px;
+			margin: auto;
+			font-family: consolas, "Lucida Sans Typewriter";
+			text-align: center;
+		}
+		.justify {
+			text-align: justify !important;
+		}
+		#projectSection {
+			margin-top: 150px;
+		}
+		img.foregroundImage {
+			width: 800px;
+			border-radius: 5px;
+			margin: auto;
+		}
+		p.imageSpacer {
+			background: none;
+			padding-bottom: 70px;
+		}
+		span.photoButton {
+			color: #ffffff;
+		    background-color: #1abc9c;
+		    border-radius: 6px;
+		    font-family: consolas, "Lucida Sans Typewriter";
+		    padding: 4px;
+		    margin: 4px;
+		    width: 160px;
+		    display: inline-block;
+		    cursor: pointer;
+		    -webkit-user-select: none;  
+			-moz-user-select: none;    
+			-ms-user-select: none;      
+			user-select: none;
+		}
+		div.galleryPhotoWrapper {
+			width: 800px;
+			height: 533px;
+		}
+		img.galleryPhoto {
+			width: 100%;
+			border-radius: 5px;
+		}
+		span.document {
+			text-decoration: none;
+			width: 210px;
+			height: 210px;
+			color: white;
+			background-color: #7F8C8D;
+			border-radius: 6px;
+			display: inline-block;
+			margin: 10px;
+			text-align: center;
+			vertical-align: top;
+		}
+		span.documentBig {
+			font-size: 50pt;
+		}
+		span.documentSmall {
+			font-size: 10pt;
+		}
+		span.documentLinkDisabled {
+			font-size: 16pt;
+			background-color: #a0aaab;
+			border-radius: 3px;
+			margin-top: 4px;
+			padding: 1px;
+			width: 170px;
+			display: inline-block;
+		}
+		a.documentLink {
+			font-size: 16pt;
+			background-color: #1abc9c;
+			text-decoration: none;
+			border-radius: 3px;
+			margin: auto;
+			margin-top: 4px;
+			padding: 1px;
+			width: 170px;
+			display: inline-block;
+			color: white;
+		}
+		span.teamMember {
+			display: inline-block;
+			width: 170px;
+			color: black;
+			padding: 10px;
+			margin-bottom: 8px;
+			vertical-align: top;
+		}
+		img.mug {
+			width: 90%;
+			border-radius: 4px;
+			padding: 4px;
+			background-color: #7F8C8D;
+		}
+		span.memberName {
+			font-size: 30pt;
+		}
+		span.memberRole {
+			font-size: 12pt;
+		}
+		span.mentorName {
+			font-size: 30pt;
+		}
+		span.mentorRole {
+			font-size: 16pt;
+		}
+		a.inlineLink {
+			color: white;
+			background-color: #1abc9c;
+			border-radius: 3px;
+			padding: 1px;
+		}
+		span.lesserContactColumn {
+			display: inline-block;
+			width: 225px;
+			padding: 10px;
+		}
+		span.fieldTitle {
+			font-size: 20px;
+		}
+		input.lesserContactField {
+			width: 100%;
+			font-size: 15px;
+			padding: 5px;
+		}
+		#mainContactColumn {
+
+		}
+		#mainContactField {
+			width: 90%;
+			margin-top: 5px;
+			margin-bottom: 20px;
+			height: 300px;
+			font-size: 15px;
+		}
+		#sendButton {
+			margin: 10px;
+			font-size: 30px;
+			padding: 10px;
+			width: 200px;
+			font-family: consolas, "Lucida Sans Typewriter";
+			background-color: #1abc9c;
+			border-color: #1abc9c;
+			border-radius: 3px;
+		}
+	</style>
+
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="EPPZScrollTo.js"></script>
+		<title>SL 2017 Unobtainium</title>
+	</head>
+
+	<body>
+
+		<!-- Header Section -->
+		<div id="header">
+			<div id="headerLeft">
+				<div id="title">
+					Madison West High School<br>
+					Student Launch 2017 Unobtainium
+				</div>
+				<a href="https://www.facebook.com/madison.west.rocketry/?fref=ts" class="socialLink" target="_blank">
+					FACEBOOK
+				</a><br>
+				<a href="https://www.youtube.com/user/MadisonWestRocketry" class="socialLink" target="_blank">
+					YOUTUBE
+				</a>
+			</div>
+			<script>
+				function smoothScroll(id) {
+					EPPZScrollTo.scrollVerticalToElementById(id, 10);
+				}
+			</script>
+			<div id="menu">
+				<span class="menuButton" onclick="smoothScroll('projectSection')">PROJECT</span>
+				<span class="menuButton" onclick="smoothScroll('vehicleSection')">VEHICLE</span>
+				<span class="menuButton" onclick="smoothScroll('gallerySection')">GALLERY</span>
+				<span class="menuButton" onclick="smoothScroll('documentsSection')">DOCUMENTS</span>
+				<span class="menuButton" onclick="smoothScroll('teamSection')">TEAM</span>
+				<span class="menuButton" onclick="smoothScroll('mentorsSection')">MENTORS</span>
+				<span class="menuButton" onclick="smoothScroll('contactSection')">CONTACT</span>
+			</div>
+		</div>
+		<div id="clear"></div>
+
+		<p class="imageSpacer"></p>
+
+		<!-- Project Section -->
+		<div class="section" id="projectSection" name="projectSection">
+			<br><div class="sectionHeader">OUR PROJECT</div><br>
+			<div class="sectionContent justify">
+				<p>We are developing a system for guided landing via a dynamically reefed parachute. The system will activate at apogee, and a camera will began analysing the ground for an optimal place to land. An on-board computer will then calculate the optimal configuration for the parachute, and wirelessly transmit it to a controller device.</p>
+				<p>The parachute controller will adjust the coords of the parachute (reefing), changing the rocket's velocity, and causing it to land in a desired location. Landing site selection will be based on colors and patterns, to simulate extraterrestrial mining operations.</p>
+				<img src="profile1.png" class="foregroundImage">
+				<br><br>
+				<img src="above.png" class="foregroundImage">
+			</div>
+			<br>
+		</div>
+
+		<script>
+			function positionMenu() {
+				var headerLeft = document.getElementById("headerLeft");
+				var menu = document.getElementById("menu");
+				var projectSection = document.getElementById("projectSection");
+
+				var scrolled = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+				console.log("scrolled=" + scrolled);
+				var threshhold = projectSection.offsetTop - menu.offsetHeight;
+				var position1 = headerLeft.offsetLeft + headerLeft.offsetWidth + 50;
+				var position2 = projectSection.offsetLeft + projectSection.offsetWidth;
+
+				var position;
+				if (scrolled < threshhold) {
+					position = (position2 - position1) * Math.sin((Math.PI / (2 * threshhold)) * scrolled) + position1;
+				} else {
+					position = position2;
+				}
+				
+				var width1 = 350;
+				var width2 = 200;
+
+				var width;
+				if (scrolled < threshhold) {
+					width = (width2 - width1) * Math.sin((Math.PI / (2 * threshhold)) * scrolled) + width1;
+				} else {
+					width = width2;
+				}
+				menu.style.left = position + "px";
+				menu.style.width = width + "px";
+			}
+			positionMenu();
+			window.addEventListener("resize", positionMenu, true);
+			window.addEventListener("scroll", positionMenu, true);
+		</script>
+
+		<p class="imageSpacer"></p>
+
+		<!-- Vehicle Section -->
+		<div class="section" id="vehicleSection" name="vehicleSection">
+			<br><div class="sectionHeader">THE VEHICLE</div><br>
+			<div class="sectionContent justify">
+				<p>We will use a single stage, J-class vehicle to reach a target altitude of one mile. The vehicle will be constructed from filament wound fiberglass tubing and CNC cut fiber glass fins. The rocket will endure at least 25g of acceleration, and the stress of high powered flight and deployment.</p>
+				<p>The rocket will be 62" long, 3" in diameter, and weigh 11.2lbs. It will have a total impulse of 1229Ns, giving it a thrust:weight ratio of 20.09.</p>
+				<img src="schematic.PNG" class="foregroundImage">
+			</div>
+			<br>
+		</div>
+
+		<p class="imageSpacer"></p>
+
+		<!-- Gallery Section -->
+		<div class="section" id="gallerySection" name="gallerySection">
+			<br><div class="sectionHeader">PHOTO GALLERY</div><br>
+			<div class="sectionContent">
+				<div id="photoGallery"></div><br>
+				<div id="photoButtonList"></div>
+				<script>
+					// Adds a photo to the gallery, invoke at start
+					function galleryAdd(name, file) {
+						var photoButtonList = document.getElementById("photoButtonList");
+						var photoButton = document.createElement("SPAN");
+						photoButton.className = "photoButton";
+						photoButton.innerHTML = name;
+						photoButtonList.appendChild(photoButton);
+
+						var photoGallery = document.getElementById("photoGallery");						
+						var photo = document.createElement("IMG");
+						photo.src = "gallery/" + file;
+						photo.className = "galleryPhoto";
+						var photoWrapper = document.createElement("DIV");
+						photoWrapper.className = "galleryPhotoWrapper";
+						photoWrapper.appendChild(photo);
+						photoGallery.appendChild(photoWrapper);
+
+						var photo = {
+							wrapper: photoWrapper,
+							button: photoButton
+						};
+						photoButton.addEventListener("click", function() {
+							select(photo);
+						})
+						return photo
+					}
+					// Unselect all gallery photos, invoked at beginning of select
+					function reset() {
+						var gallery = document.getElementsByClassName("galleryPhotoWrapper");
+						for (i = 0; i < gallery.length; i++) {
+							gallery[i].style.display = "none";
+						}
+						var buttons = document.getElementsByClassName("photoButton");
+						for (i = 0; i < buttons.length; i++) {
+							buttons[i].style.backgroundColor = "#1abc9c";
+						}
+					}
+					/*
+					 * Select the given photo/button set, given the object returned by galleryAdd
+					 * Invoke once upon startup, and when buttons are clicked
+					 * galleryAdd sets up the buttons to invoke this via event listener
+					 */
+					function select(photo) {
+						reset();
+						photo.wrapper.style.display = "block";
+						photo.button.style.backgroundColor = "#35e3c1";
+						console.log(photo.button.style.backgroundColor);
+					}
+					// Photo gallery setup
+					
+					//var displayFirst = galleryAdd("LOREM", "LOREM.jpg");
+					//galleryAdd("IPSUM", "IPSUM.jpg");
+					//galleryAdd("DOLOR", "DOLOR.jpg");
+					//galleryAdd("SIT", "SIT.jpg");
+					//galleryAdd("AMET", "AMET.jpg");
+					var displayFirst = galleryAdd("Launch Site", "launch.jpg");
+					//galleryAdd("Flow Homogenizer", "wind.jpg");
+					galleryAdd("Vacuum Testing", "vacuum.jpg");
+					galleryAdd("Outreach", "outreach.jpg");
+
+					select(displayFirst);
+				</script>
+			</div>
+			<br>
+		</div>
+
+		<p class="imageSpacer"></p>
+		
+		<!-- Document Section -->
+		<div class="section" id="documentsSection" name="documentsSection">
+			<br><div class="sectionHeader">DOCUMENTS</div><br>
+			<div class="sectionContent">
+				<span class="document">
+					<span class="documentBig">SOW</span>
+					<br>
+					<span class="documentSmall">(Statement of Work)</span>
+					<br>
+					<a class="documentLink" href="http://westrocketry.com/sli2017/SOW_MadisonWest2017_SmartLander.pdf"  target="_blank">DOCUMENT</a>
+					<br>
+				</span>
+				<span class="document">
+					<span class="documentBig">PDR</span>
+					<br>
+					<span class="documentSmall">(Preliminary Design Review)</span>
+					<br>
+					<a class="documentLink" href="http://westrocketry.com/sli2017/PDR_MadisonWest2017_SmartLander.pdf" target="_blank">DOCUMENT</a>
+					<br>
+					<a class="documentLink" href="http://westrocketry.com/sli2017/PDP_MadisonWest2017_SmartLander.pdf" target="_blank">PRESENTATION</a>
+					<br>
+					<a class="documentLink" href="http://westrocketry.com/sli2017/MSRFS_PDR_MadisonWest2017_SmartLander.pdf" target="_blank">FLYSHEET</a>
+					<br>
+				</span>
+				<span class="document">
+					<span class="documentBig">CDR</span>
+					<br>
+					<span class="documentSmall">(Critical Design Review)</span>
+					<br>
+					<a class="documentLink" href="http://westrocketry.com/sli2017/CDR_MadisonWest2017_SmartLander.pdf" target="_blank">DOCUMENT</a>
+					<!--<span class="documentLinkDisabled">DOCUMENT</span>-->
+					<br>
+					<a class="documentLink" href="http://westrocketry.com/sli2017/CDP_MadisonWest2017_SmartLander.pdf" target="_blank">PRESENTATION</a>
+					<!--<span class="documentLinkDisabled">PRESENTATION</span>-->
+					<br>
+					<a class="documentLink" href="http://westrocketry.com/sli2017/MSRFS_CDR_MadisonWest2017_SmartLander.pdf" target="_blank">FLYSHEET</a>
+					<!--<span class="documentLinkDisabled">FLYSHEET</span>-->
+					<br>
+				</span>
+				<span class="document">
+					<span class="documentBig">FRR</span>
+					<br>
+					<span class="documentSmall">(Flight Readiness Review)</span>
+					<br>
+					<a class="documentLink" href="http://westrocketry.com/sli2017/FRR_MadisonWest2017_SmartLander.pdf" target="_blank">DOCUMENT</a>
+					<!--<span class="documentLinkDisabled">DOCUMENT</span>-->
+					<br>
+					<a class="documentLink" href="http://westrocketry.com/sli2017/FRP_MadisonWest2017_SmartLander.pdf" target="_blank">PRESENTATION</a>
+					<!--<span class="documentLinkDisabled">PRESENTATION</span>-->
+					<br>
+					<a class="documentLink" href="http://westrocketry.com/sli2017/MSRFS_FRR_MadisonWest2017_SmartLander.pdf" target="_blank">FLYSHEET</a>
+					<!--<span class="documentLinkDisabled">FLYSHEET</span>-->
+					<br>
+				</span>
+
+				<!--
+				<span class="document">
+					<span class="documentBig">FRR</span>
+					<br>
+					<span class="documentSmall">(Flight Readiness Review)</span>
+					<br>
+					<a class="documentLink" href="http://westrocketry.com/sli2017/FRR_MadisonWest2017_SmartLander.pdf">DOCUMENT</span>
+					<br>
+					<a class="documentLink" href="http://westrocketry.com/sli2017/FRP_MadisonWest2017_SmartLander.pdf">PRESENTATION</span>
+					<br>
+					<a class="documentLink" href="http://westrocketry.com/sli2017/MSRFS_FRR_MadisonWest2017_SmartLander.pdf">FLYSHEET</span>
+					<br>
+				</span>
+			-->
+				<span class="document">
+					<span class="documentBig">LRR</span>
+					<br>
+					<span class="documentSmall">(Launch Readiness Review)</span>
+					<br>
+					<span class="documentLinkDisabled">DOCUMENT</span>
+					<br>
+				</span>
+				<span class="document">
+					<span class="documentBig">PLAR</span>
+					<br>
+					<span class="documentSmall">(Post Launch<br>Assessment Review)</span>
+					<br>
+					<a class="documentLink" href="http://westrocketry.com/sli2017/PLAR_MadisonWest2017_SmartLander.pdf">DOCUMENT</span>
+					<br>
+				</span>
+			</div>	
+			<br>
+		</div>
+
+		<p class="imageSpacer"></p>
+
+		<!-- Team Section -->
+		<div class="section" id="teamSection" name="teamSection">
+			<br><div class="sectionHeader">THE TEAM</div><br>
+			<div class="sectionContent">
+				<span class="teamMember">
+					<img class="mug" src="mugs/Ray.jpg"><Br>
+					<span class="memberName">
+						Ray<br>
+					</span>
+					<span class="memberRole">
+						Lead Vehicle Engineer
+					</span>
+				</span>
+				<span class="teamMember">
+					<img class="mug" src="mugs/Easton.jpg"><br>
+					<span class="memberName">
+						Easton<br>
+					</span>
+					<span class="memberRole">
+						Vehicle Operations and Safety
+					</span>
+				</span>
+				<span class="teamMember">
+					<img class="mug" src="mugs/Riley.jpg"><br>
+					<span class="memberName">
+						Riley<br>
+					</span>
+					<span class="memberRole">
+						Vehicle Construction
+					</span>
+				</span>
+				<span class="teamMember">
+					<img class="mug" src="mugs/Stephen.jpg"><br>
+					<span class="memberName">
+						Stephen<br>
+					</span>
+					<span class="memberRole">
+						Deployment Specialist
+					</span>
+				</span>
+				<span class="teamMember">
+					<img class="mug" src="mugs/Lucas.jpg"><br>
+					<span class="memberName">
+						Lucas<br>
+					</span>
+					<span class="memberRole">
+						Deployment Specialist
+					</span>
+				</span>
+				<span class="teamMember">
+					<img class="mug" src="mugs/Jason.jpg"><br>
+					<span class="memberName">
+						Jason<br>
+					</span>
+					<span class="memberRole">
+						Team Leader
+					</span>
+				</span>
+				<span class="teamMember">
+					<img class="mug" src="mugs/Jeff.jpg"><br>
+					<span class="memberName">
+						Jeff<Br>
+					</span>
+					<span class="memberRole">
+						Payload Telemetry and Communications
+					</span>
+				</span>
+				<span class="teamMember">
+					<img class="mug" src="mugs/Phoenix.jpg"><br>
+					<span class="memberName">
+						Phoenix<br>
+					</span>
+					<span class="memberRole">
+						Payload Telemetry and Communications
+					</span>
+				</span>
+				<span class="teamMember">
+					<img class="mug" src="mugs/Cyrus.jpg"><br>
+					<span class="memberName">
+						Cyrus<br>
+					</span>
+					<span class="memberRole">
+						Tracking and Recovery
+					</span>
+				</span>
+				<span class="teamMember">
+					<img class="mug" src="mugs/Valerie.jpg"><br>
+					<span class="memberName">
+						Valerie<br>
+					</span>
+					<span class="memberRole">
+						Data Collection and Analysis
+					</span>
+				</span>
+				<span class="teamMember">
+					<img class="mug" src="mugs/Ceci.jpg"><br>
+					<span class="memberName">
+						Cecilia<br>
+					</span>
+					<span class="memberRole">
+						Payload Design
+					</span>
+				</span>
+				<span class="teamMember">
+					<img class="mug" src="mugs/Melinda.jpg"><br>
+					<span class="memberName">
+						Melinda<br>
+					</span>
+					<span class="memberRole">
+						Payload Construction
+					</span>
+				</span>
+			</div>
+			<br>
+		</div>
+
+		<p class="imageSpacer"></p>
+
+		<!-- Mentors Section -->
+		<div class="section" id="mentorsSection" name="mentorsSection">
+			<br><div class="sectionHeader">OUR MENTORS</div><br>
+			<div class="sectionContent">
+				<span class="mentorName">Pavel Pinkas</span><br>
+				<span class="mentorRole">Scientific Advisor</span><br><br>
+				<span class="mentorName">Christine Hager</span><br>
+				<span class="mentorRole">Program Director</span><br><br>
+				<span class="mentorName">Brent Lillesand</span><br>
+				<span class="mentorRole">Mechanical Engineer</span><br><br>
+				<span class="mentorName">Robert Williamson</span><br>
+				<span class="mentorRole">Technical Lead</span><br><br>
+				<span class="mentorName">James Guither</span><br>
+				<span class="mentorRole">Mechanical Engineer</span><br><br>
+				<span class="mentorName">Sebastian Bednarek</span><br>
+				<span class="mentorRole">Professor of Biochemistry</span><br><br>
+			</div>
+			<br>
+		</div>
+
+		<p class="imageSpacer"></p>
+
+		<!-- Contact Section -->
+		<div class="section" id="contactSection" name="contactSection">
+			<br><div class="sectionHeader">CONTACT US</div><br><br>
+			<div class="sectionContent">
+				<form method="post" name="contact" action="contact.php">
+					<span class="lesserContactColumn fieldTitle">
+						Your Name<br>
+						<input type="text" name="name" class="lesserContactField">
+					</span>
+					<span class="lesserContactColumn fieldTitle">
+						Your Email<br>
+						<input type="text" name="email" class="lesserContactField">
+					</span>
+					<span class="lesserContactColumn fieldTitle">
+						Your Phone<br>
+						<input type="text" name="number" class="lesserContactField">
+					</span>
+					<br>
+					<br>
+					<span id="mainContactColumn">
+						<span class="fieldTitle">
+							Your Message
+						</span>
+						<textarea name="message" id="mainContactField"></textarea><br>
+						<input type="submit" value="Send" id="sendButton">
+					</span>
+				</form>
+				<br>
+			</div>
+		</div>
+
+		<p class="imageSpacer"></p>
+		
+	</body>
+</html>
